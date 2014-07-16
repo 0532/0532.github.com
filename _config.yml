@@ -6,6 +6,6 @@ paginate: 8
 permalink: /:title
 
 title: WangLichao.com
-url: https://github.com/0532.com
+url: http://0532.github.io/
 feed: /atom.xml
-author_info: <a href="https://github.com/0532">WangLichao</a>
+author_info: <a href="http://0532.github.io/">WangLichao</a>
