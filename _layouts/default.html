@@ -5,7 +5,7 @@
     * Author:         WangLichao
     -->
     <meta charset="utf-8" />
-    <title>WangLichao's Blog</title>
+    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
     <meta name="author" content="WangLichao" />
     <meta name="renderer" content="webkit">
     <meta name="description" content="WangLichao's Blog" />
