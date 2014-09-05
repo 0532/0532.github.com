@@ -15,31 +15,32 @@ description: 希望更多的人加入nodejs
 	$ Package name: (byvoidmodule) byvoidmodule
 	$ Description: A module for learning perpose.
 	$ Package version: (0.0.0) 0.0.1
-Project homepage: (none) http://www.byvoid.com/
-Project git repository: (none)
-Author name: BYVoid
-Author email: (none) byvoid.kcp@gmail.com
-Author url: (none) http://www.byvoid.com/
-Main module/entry point: (none)
-Test command: (none)
-What versions of node does it run on? (~0.6.10)
-About to write to /home/byvoid/byvoidmodule/package.json
-{
-"author": "BYVoid <byvoid.kcp@gmail.com> (http://www.byvoid.com/)",
-"name": "byvoidmodule",
-"description": "A module for learning perpose.",
-"version": "0.0.1",
-"homepage": "http://www.byvoid.com/",
-"repository": {
-"url": ""
-},
-"engines": {
-"node": "~0.6.12"
-},
-"dependencies": {},
-"devDependencies": {}
-}
-Is this ok? (yes) yes
+	Project homepage: (none) http://www.byvoid.com/
+	Project git repository: (none)
+	Author name: BYVoid
+	Author email: (none) byvoid.kcp@gmail.com
+	Author url: (none) http://www.byvoid.com/
+	Main module/entry point: (none)
+	Test command: (none)
+	What versions of node does it run on? (~0.6.10)
+	About to write to /home/byvoid/byvoidmodule/package.json
+	{
+	"author": "BYVoid <byvoid.kcp@gmail.com> (http://www.byvoid.com/)",
+	"name": "byvoidmodule",
+	"description": "A module for learning perpose.",
+	"version": "0.0.1",
+	"homepage": "http://www.byvoid.com/",
+	"repository": {
+	"url": ""
+	},
+	"engines": {
+	"node": "~0.6.12"
+	},
+	"dependencies": {},
+	"devDependencies": {}
+	}
+	Is this ok? (yes) yes
+	
 这样就在 byvoidmodule 目录中生成一个符合 npm 规范的 package.json 文件。创建一个
 index.js 作为包的接口，一个简单的包就制作完成了。
 	在发布前，我们还需要获得一个账号用于今后维护自己的包，使用 npm adduser 根据
@@ -52,3 +53,6 @@ org上包的描述页面。
 	如果你的包将来有更新，只需要在 package.json 文件中修改 version 字段，然后重新
 使用 npm publish 命令就行了。如果你对已发布的包不满意（比如我们发布的这个毫无意
 义的包），可以使用 npm unpublish 命令来取消发布。
+
+
+[1]: https://www.npmjs.org/
