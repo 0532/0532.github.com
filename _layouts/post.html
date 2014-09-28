@@ -11,38 +11,6 @@ layout: default
     @media screen and (max-width: 1020px){
         body { background:#fff; }
     }
-	#one.a.tet:link {text-decoration:none;}    /* 未被访问的链接 */
-	#one.a.tet:visited {text-decoration:none;} /* 已被访问的链接 */
-	#one.a.tet:hover {text-decoration:underline;}/* 鼠标指针移动到链接上 */	
-	#one.a.tet:active {background-color:#FF704D;}  /* 正在被点击的链接 */
-	#two.a.pic{
-	background:url(/fellow.png)  no-repeat;
-	height:76px; 
-	width:27px;
-	display:block;
-	border:0px;
-	}
-	#two.a.pic:link,a:visited{ 
-	background:url(/fellow.png)  no-repeat;
-	display:block; 
-	width:76px; 
-	height:27px; 
-	border:0px;
-	}
-	#two.a.pic:hover{
-	background:url(/fellow2.png) no-repeat;
-	height:27px;
-	width:76px;
-	display:block;
-	border:0px;
-	}
-	#two.a.pic:active {
-	background:url(/fellow.png) no-repeat;
-	height:27px;
-	width:76px;
-	display:block;
-	border:0px;
-	}
 </style>
 
 <div id="content">
@@ -79,14 +47,14 @@ var duoshuoQuery = {short_name:"wli12"};
     <div class="sidenav">
         <div style="width: 500px">
             <div style="float:left;margin-right:15px">
-                <a href="https://github.com/0532" target="_blank"> <img width="65px" height="65px" src="/pic.png"/> </a>
+                <a href="https://github.com/0532" target="_balnk"> <img width="65px" height="65px" src="/pic.png"/> </a>
             </div>
             <div>
-                <div id="one">
-                    <a class="tet" href="http://0532.github.io/resume/#information" target="_blank" style="text-decoration:none;color: #50A2E2 ;font-size: 13px;" >WangLichao</a>
+                <div>
+                    <a href="http://0532.github.io/resume/#information" target="_blank" style="text-decoration:none;color: #50A2E2 ;font-size: 13px;">WangLichao</a>
                 </div>
-                <div style="margin-top:15px" id="two">
-                    <a class="pic" href="https://github.com/0532" target="_blank"></a>
+                <div style="margin-top:15px">
+                    <a href="https://github.com/0532" target="_blank"><img src="fellow.png" border="0" onMouseOver="this.src='fellow2.png'" onMouseOut="this.src='fellow.png'" /> </a>
                 </div>
             </div>
         </div>
