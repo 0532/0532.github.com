@@ -11,6 +11,10 @@ layout: default
     @media screen and (max-width: 1020px){
         body { background:#fff; }
     }
+	a.tet:link {text-decoration:none;}    /* 未被访问的链接 */
+	a.tet:visited {text-decoration:none;} /* 已被访问的链接 */
+	a.tet:hover {text-decoration:underline;}/* 鼠标指针移动到链接上 */	
+	a.tett:active {background-color:#FF704D;}  /* 正在被点击的链接 */
 </style>
 
 <div id="content">
@@ -51,7 +55,7 @@ var duoshuoQuery = {short_name:"wli12"};
             </div>
             <div>
                 <div>
-                    <a href="http://0532.github.io/resume/#information" target="_blank" style="text-decoration:none;color: #50A2E2 ;font-size: 13px;">WangLichao</a>
+                    <a class="tet" href="http://0532.github.io/resume/#information" target="_blank" style="text-decoration:none;color: #50A2E2 ;font-size: 13px;">WangLichao</a>
                 </div>
                 <div style="margin-top:15px">
                     <a href="https://github.com/0532" target="_blank"><img width="76px" height="27px" src="/fellow.png" border="0" onMouseOver="this.src='/fellow2.png'" onMouseOut="this.src='/fellow.png'" /> </a>
