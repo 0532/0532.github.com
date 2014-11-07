@@ -1,4 +1,5 @@
-:cn:
+  :cn:
+  |
 * 个人简历：[点此阅读](http://0532.github.io/resume)
 
 
