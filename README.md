@@ -1,7 +1,5 @@
 [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/0532/0532.github.io?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 =================  
-:octocat: 个人简历：[点此阅读](http://0532.github.io/resume)
-
 
 :octocat: blog地址：[点此阅读](http://0532.github.io)
 
