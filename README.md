@@ -4,6 +4,6 @@
 :octocat: blog地址：[点此阅读](http://0532.github.io)
 
 
-:octocat: 新浪微博: [@0532-github](http://weibo.com/234654066)
+:octocat: 新浪微博: [@0532-github](http://weibo.com/937397606)
 
 
