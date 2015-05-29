@@ -6,7 +6,7 @@ description: Scoket编程对大家肯定不陌生。然而，本文我主要写�
 ---
 Scoket编程对大家肯定不陌生。然而，本文我主要写一些socket的基础知识，及自己对socket的理解。
 
-####Socket是什么呢？
+##Socket是什么呢？
 
 Socket是应用层与TCP/IP协议族通信的中间软件抽象层，它是一组接口。在设计模式中，Socket其实就是一个门面模式，它把复杂的TCP/IP协议族隐藏在Socket接口后面，对用户来说，一组简单的接口就是全部，让Socket去组织数据，以符合指定的协议。
 ![ssh key success](/images/blog/socket1.jpg)
