@@ -568,7 +568,7 @@ category: blog
         ... 
     }
 
-这里的注释说明了倒序排列，单还不够准确，应该改成这样：
+这里的注释说明了倒序排列，但还不够准确，应该改成这样：
 
     // Display each price, from highest to lowest
     for (list<Product>::reverse_iterator it = products.rbegin(); ... )
