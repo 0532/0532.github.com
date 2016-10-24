@@ -36,6 +36,7 @@ title: GoogleJava编程风格规范
 源文件编码格式为 ```UTF-8```。
 
 ### 2.3 特殊字符
+
 #### 2.3.1 空白字符
 除了行结束符序列，ASCII水平空格字符(0x20，即空格)是源文件中唯一允许出现的空白字符，这意味着：
 
@@ -63,7 +64,7 @@ return '\ufeff' + content; // byte order mark             | Good，对于非打�
 *Tip:
 永远不要由于害怕某些程序可能无法正确处理非ASCII字符而让你的代码可读性变差。当程序无法正确处理非ASCII字符时，它自然无*
 
-##源文件结构
+## 源文件结构
 
 一个源文件包含(按顺序地)：
 
@@ -111,7 +112,8 @@ return '\ufeff' + content; // byte order mark             | Good，对于非打�
 
 组内不空行，按字典序排列。
 
-### 3.4 类声明
+### 3.4 类声明 
+
 #### 3.4.1 只有一个顶级类声明
 
 每个顶级类都在一个与它同名的源文件中(当然，还包含```.java```后缀)。
@@ -126,7 +128,7 @@ return '\ufeff' + content; // byte order mark             | Good，对于非打�
 
 当一个类有多个构造函数，或是多个同名方法，这些函数/方法应该按顺序出现在一起，中间不要放进其它函数/方法。
 
-##格式
+## 格式
 
 术语说明：块状结构(block-like construct)指的是一个类，方法或构造函数的主体。需要注意的是，数组初始化中的初始值可被选择性地视为块状结构(4.8.3.1节)。
 
@@ -149,6 +151,7 @@ return '\ufeff' + content; // byte order mark             | Good，对于非打�
 * 如果右大括号是一个语句、函数体或类的终止，则右大括号后换行; 否则不换行。例如，如果右大括号后面是else或逗号，则不换行。
 
 *示例：*
+
 ```
 return new MyClass() {
   @Override public void method() {
@@ -162,6 +165,7 @@ return new MyClass() {
   }
 };
 ```
+
 *4.8.1节给出了enum类的一些例外。*
 
 #### 4.1.3 空块：可以用简洁版本
@@ -177,7 +181,7 @@ void doNothing() {}
 
 每当开始一个新的块，缩进增加2个空格，当块结束时，缩进返回先前的缩进级别。缩进级别适用于代码和注释。(见4.1.2节中的代码示例)
 
-###4.3 一行一个语句
+### 4.3 一行一个语句
 
 每个语句后要换行。
 
@@ -255,7 +259,7 @@ void doNothing() {}
 * catch块中的管道符号(catch (FooException | BarException e)。
 * foreach语句中的分号。
 
-5.在, : ;及右括号())后
+5.在`, : ;`及右括号())后
 6.如果在一条语句后做注释，则双斜杠(//)两边都要空格。这里可以允许多个空格，但没有必要。
 
 7.类型和变量之间：List list。
@@ -283,7 +287,7 @@ private Color color;  // may leave it unaligned
 *Tip：
 对齐可增加代码可读性，但它为日后的维护带来问题。考虑未来某个时候，我们需要修改一堆对齐的代码中的一行。 这可能导致原本很漂亮的对齐代码变得错位。很可能它会提示你调整周围代码的空白来使这一堆代码重新水平对齐(比如程序员想保持这种水平对齐的风格)， 这就会让你做许多的无用功，增加了reviewer的工作并且可能导致更多的合并冲突。*
 
-###4.7 用小括号来限定组：推荐
+### 4.7 用小括号来限定组：推荐
 
 除非作者和reviewer都认为去掉小括号也不会使代码被误解，或是去掉小括号能让代码更易于阅读，否则我们不应该去掉小括号。 我们没有理由假设读者能记住整个Java运算符优先级表。
 
@@ -316,6 +320,7 @@ private enum Suit { CLUBS, HEARTS, SPADES, DIAMONDS }
 ##### 4.8.3.1 数组初始化：可写成块状结构
 
 数组初始化可以写成块状结构，比如，下面的写法都是OK的：
+
 ```
 new int[] {
   0, 1, 2, 3
@@ -340,6 +345,7 @@ new int[]
 ##### 4.8.3.2 非C风格的数组声明
 
 中括号是类型的一部分：```String[] args```， 而非```String args[]```。
+
 #### 4.8.4 switch语句
 
 术语说明：switch块的大括号内是一个或多个语句组。每个语句组包含一个或多个switch标签(case FOO:或default:)，后面跟着一条或多条语句。
@@ -353,6 +359,7 @@ new int[]
 ##### 4.8.4.2 Fall-through：注释
 
 在一个switch块内，每个语句组要么通过break, continue, return或抛出异常来终止，要么通过一条注释来说明程序将继续执行到下一个语句组， 任何能表达这个意思的注释都是OK的(典型的是用// fall through)。这个特殊的注释并不需要在最后一个语句组(一般是default)中出现。示例：
+
 ```
 switch (input) {
   case 1:
@@ -374,19 +381,25 @@ switch (input) {
 #### 4.8.5 注解(Annotations)
 
 注解紧跟在文档块后面，应用于类、方法和构造函数，一个注解独占一行。这些换行不属于自动换行(第4.5节，自动换行)，因此缩进级别不变。例如：
+
 ```
 @Override
 @Nullable
 public String getNameIfPresent() { ... }
 ```
+
 例外：单个的注解可以和签名的第一行出现在同一行。例如：
+
 ```
 @Override public int hashCode() { ... }
 ```
+
 应用于字段的注解紧随文档块出现，应用于字段的多个注解允许与字段出现在同一行。例如：
+
 ```
 @Partial @Mock DataLoader loader;
 ```
+
 参数和局部变量注解没有特定规则。
 
 #### 4.8.6 注释
@@ -394,6 +407,7 @@ public String getNameIfPresent() { ... }
 ##### 4.8.6.1 块注释风格
 
 块注释与其周围的代码在同一缩进级别。它们可以是
+
 ```/* ... */```
 风格，也可以是```// ...```风格。对于多行的```/* ... */```注释，后续行必须从*开始， 并且与前一行的*对齐。以下示例注释都是OK的。
 
@@ -452,6 +466,7 @@ public protected private abstract static final transient volatile synchronized n
 常量名命名模式为```CONSTANT_CASE```，全部字母大写，用下划线分隔单词。那，到底什么算是一个常量？
 
 每个常量都是一个静态```final```字段，但不是所有静态final字段都是常量。在决定一个字段是否是一个常量时， 考虑它是否真的感觉像是一个常量。例如，如果任何一个该实例的观测状态是可变的，则它几乎肯定不会是一个常量。 只是永远不打算改变对象一般是不够的，它要真的一直不变才能将它示为常量。
+
 ```
 // Constants
 static final int NUMBER = 5;
@@ -468,6 +483,7 @@ static final ImmutableSet<SomeMutableType> mutableElements = ImmutableSet.of(mut
 static final Logger logger = Logger.getLogger(MyClass.getName());
 static final String[] nonEmptyArray = {"these", "can", "change"};
 ```
+
 这些名字通常是名词或名词短语。
 
 #### 5.2.5 非常量字段名
@@ -516,6 +532,7 @@ static final String[] nonEmptyArray = {"these", "can", "change"};
 4.最后将所有的单词连接起来得到一个标识符。
 
 示例：
+
 ```
 Prose form                Correct               Incorrect
 ------------------------------------------------------------------
@@ -542,6 +559,7 @@ Prose form                Correct               Incorrect
 除了下面的例子，对捕获的异常不做响应是极少正确的。(典型的响应方式是打印日志，或者如果它被认为是不可能的，则把它当作一个```AssertionError```重新抛出。)
 
 如果它确实是不需要在catch块中做任何响应，需要做注释加以说明(如下面的例子)。
+
 ```
 try {
   int i = Integer.parseInt(response);
@@ -553,6 +571,7 @@ return handleTextResponse(response);
 ```
 
 例外：在测试中，如果一个捕获的异常被命名为expected，则它可以被不加注释地忽略。下面是一种非常常见的情形，用以确保所测试的方法会抛出一个期望中的异常， 因此在这里就没有必要加注释。
+
 
 ```
 try {
@@ -587,6 +606,7 @@ somethingThatYieldsAFoo().aStaticMethod(); // very bad
 #### 7.1.1 一般形式
 
 Javadoc块的基本格式如下所示：
+
 ```
 /**
  * Multiple lines of Javadoc text are written here,
@@ -601,6 +621,7 @@ public int method(String p1) { ... }
 ```
 /** An especially short bit of Javadoc. */
 ```
+
 基本格式总是OK的。当整个Javadoc块能容纳于一行时(且没有Javadoc标记@XXX)，可以使用单行形式。
 
 #### 7.1.2 段落
