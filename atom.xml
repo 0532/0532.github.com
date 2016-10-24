@@ -1,27 +1,26 @@
 ---
-layout: nil
 ---
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
- 
-   <title>{{ site.title }}</title>
-   <link href="{{ site.url }}{{ site.feed }}" rel="self" type="application/atom+xml"/>
-   <link href="{{ site.url }}" rel="alternate" type="text/html" />
-   <updated>{{ site.time | date_to_xmlschema }}</updated>
-   <id>{{ site.url }}</id>
-   <author>
-     <name>{{ site.author.name }}</name>
-     <email>{{ site.author.email }}</email>
-   </author>
 
-   {% for post in site.posts limit:10 %}
-   <entry>
-     <title>{{ post.title }}</title>
-     <link href="http://0532.github.io{{ post.url }}"/>
-     <updated>{{ post.date | date_to_xmlschema }}</updated>
-     <id>http://0532.github.io{{ post.id }}</id>
-     <content type="html">{{ post.content | xml_escape }}</content>
-   </entry>
-   {% endfor %}
- 
+ <title>Wang Lichao</title>
+ <link href="http://blog.wanglichao.com/atom.xml" rel="self"/>
+ <link href="http://blog.wanglichao.com/"/>
+ <updated>{{ site.time | date_to_xmlschema }}</updated>
+ <id>http://wanglichao.com/</id>
+ <author>
+   <name>Wang Lichao</name>
+   <email>wanglichao@163.com</email>
+ </author>
+
+ {% for post in site.posts %}
+ <entry>
+   <title>{{ post.title }}</title>
+   <link href="http://blog.wanglichao.com{{ post.url }}"/>
+   <updated>{{ post.date | date_to_xmlschema }}</updated>
+   <id>http://blog.wanglichao.com{{ post.id }}</id>
+   <content type="html">{{ post.content | xml_escape }}</content>
+ </entry>
+ {% endfor %}
+
 </feed>

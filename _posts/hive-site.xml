@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<configuration>
+
+    <!--    <property>
+        <name>hive.metastore.local</name>
+        <value>true</value>
+    </property> -->
+
+    <property>
+        <name>hive.metastore.uris</name>
+        <value>thrift://localhost:9083</value>
+    </property>
+
+    <property>
+        <name>javax.jdo.option.ConnectionURL</name>
+        <value>jdbc:mysql://127.0.0.1:3306/hive?createDatabaseIfNotExist=true&amp;useUnicode=true&amp;characterEncoding=latin1</value>
+    </property>
+
+    <property>
+        <name>javax.jdo.option.ConnectionDriverName</name>
+        <value>com.mysql.jdbc.Driver</value>
+    </property>
+
+    <property>
+        <name>javax.jdo.option.ConnectionUserName</name>
+        <value>root</value>
+    </property>
+
+    <property>
+        <name>javax.jdo.option.ConnectionPassword</name>
+        <value>anywhere</value>
+    </property>
+
+    <property>
+        <name>hive.exec.scratchdir</name>
+        <value>/tmp/hive</value>
+    </property>
+
+    <property>
+        <name>hive.exec.local.scratchdir</name>
+        <value>/usr/local/Cellar/hive/apache-hive-1.0.0-bin/tmp</value>
+    </property>
+
+    <property>
+        <name>hive.downloaded.resources.dir</name>
+        <value>/usr/local/Cellar/hive/apache-hive-1.0.0-bin/tmp/${hive.session.id}_resources</value>
+    </property>
+
+    <property>
+        <name>hive.metastore.warehouse.dir</name>
+        <value>/user/hive/warehouse</value>
+    </property>
+
+    <property>
+        <name>hive.server2.thrift.port</name>
+        <value>10000</value>
+        <description>Port number of HiveServer2 Thrift interface when hive.server2.transport.mode is 'binary'.</description>
+    </property>
+
+    
+<!--
+    <property>
+        <name>datanucleus.autoCreateTables</name>
+        <value>true</value>
+    </property>
+    <property>
+        <name>datanucleus.autoCreateColumns</name>
+        <value>true</value>
+    </property>
+    <property>
+        <name>datanucleus.autoCreateSchema</name>
+        <value>true</value>
+    </property>
+-->
+<!--
+    <property>
+        <name>hive.support.concurrency</name>
+        <value>true</value>
+    </property>
+    <property>
+        <name>hive.enforce.bucketing</name>
+        <value>true</value>
+    </property>
+    <property>
+        <name>hive.exec.dynamic.partition.mode</name>
+        <value>nonstrict</value>
+    </property>
+    <property>
+        <name>hive.txn.manager</name>
+        <value>org.apache.hadoop.hive.ql.lockmgr.DbTxnManager</value>
+    </property>
+    <property>
+        <name>hive.compactor.initiator.on</name>
+        <value>true</value>
+    </property>
+    <property>
+        <name>hive.compactor.worker.threads</name>
+        <value>2</value>
+    </property>  -->
+</configuration> 
