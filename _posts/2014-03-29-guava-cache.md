@@ -1,6 +1,6 @@
 ---
 layout: post
-title: cache缓存(GuavaCache)
+title: guava cache缓存(GuavaCache)
 ---
 
 {{ page.title }}
