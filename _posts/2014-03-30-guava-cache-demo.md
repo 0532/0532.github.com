@@ -6,7 +6,7 @@ title: guava cache缓存(GuavaCache)示例及分析
 {{ page.title }}
 ================
 
-<p class="meta">20 Mar 2014 - 青岛</p>
+<p class="meta">30 Mar 2014 - 青岛</p>
 
 guava中使用缓存需要先声明一个CacheBuilder对象，并设置缓存的相关参数，然后调用其build方法获得一个Cache接口的实例。请看下面的代码和注释，注意在注释中指定了Cache的各个参数。
 
