@@ -1,6 +1,6 @@
 ---
 layout: post
-title: guava throwables
+title: guava帮我们throw Exception之throwables
 ---
 
 {{ page.title }}
