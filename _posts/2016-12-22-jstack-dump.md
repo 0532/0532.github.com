@@ -83,7 +83,6 @@ at com.tuan.core.common.lang.cache.remote.SpyMemcachedClient.get(SpyMemcachedCli
 * Waiting for monitor entry 和 in Object.wait()：Monitor是 Java中用以实现线程之间的互斥与协作的主要手段，它可以看成是对象或者 Class的锁。每一个对象都有，也仅有一个 monitor。从下图1中可以看出，每个 Monitor在某个时刻，只能被一个线程拥有，该线程就是 “Active Thread”，而其它线程都是 “Waiting Thread”，分别在两个队列 “ Entry Set”和 “Wait Set”里面等候。在 “Entry Set”中等待的线程状态是 “Waiting for monitor entry”，而在 “Wait Set”中等待的线程状态是 “in Object.wait()”。
 
 ![A Java Monitor][1]
-http://images.cnblogs.com/cnblogs_com/zhengyun_ustc/255879/o_clipboard%20-%20%E5%89%AF%E6%9C%AC039.png
 
 图1 A Java Monitor
 
@@ -150,10 +149,11 @@ public Reference<? extends T> remove(long timeout)
             ……
        }
 }
+
 ```
 
 即，线程的执行中，先用 synchronized 获得了这个对象的 Monitor（对应于  locked <0x00000000aa672478> ）；当执行到 lock.wait(timeout);，线程就放弃了 Monitor 的所有权，进入“Wait Set”队列（对应于  waiting on <0x00000000aa672478> ）。
 
 5）从堆栈信息看，是正在清理 remote references to remote objects ，引用的租约到了，分布式垃圾回收在逐一清理呢。
 
-  [1]: /pic/2016/12-22.png
+[1]: /pic/2016/12-22.png
