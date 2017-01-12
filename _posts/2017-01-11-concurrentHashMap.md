@@ -19,6 +19,7 @@ title: 聊聊ConcurrentHashMap的使用
 因为多线程环境下，使用Hashmap进行put操作会引起死循环，导致CPU利用率接近100%，所以在并发情况下不能使用HashMap。
 
 如以下代码：
+
 ```java
 final HashMap<String, String> map = new HashMap<String, String>(2);
         Thread t = new Thread(new Runnable() {
