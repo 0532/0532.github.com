@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 学会看jstack Dump 日志
+title: 学会查看jstack Dump 日志
 ---
 
 {{ page.title }}
