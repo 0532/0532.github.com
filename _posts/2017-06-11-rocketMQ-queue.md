@@ -1,6 +1,6 @@
 ---
 layout: post
-title: rocketMQ顺序消费的应用
+title: RocketMQ顺序消费的应用
 ---
 
 {{ page.title }}
