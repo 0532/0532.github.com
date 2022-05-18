@@ -18,21 +18,21 @@ npminit可以根据交互式问答产生一个符合标准的package.json，
 	Package name: (wanglichao) wanglichao
 	Description: A module for learning perpose.
 	Package version: (0.0.0) 0.0.1
-	Project homepage: (none) http://0532.github.com/
+	Project homepage: (none) http://0532.github.io/
 	Project git repository: (none)
 	Author name: wanglichao
 	Author email: (none) wanglichao@163.com
-	Author url: (none) http://0532.github.com/
+	Author url: (none) http://0532.github.io/
 	Main module/entry point: (none)
 	Test command: (none)
 	What versions of node does it run on? (~0.6.10)
 	About to write to /home/node_modules/wanglichao/package.json
 	{
-	"author": "wanglichao <wanglichao@163.com> (http://0532.github.com/)",
+	"author": "wanglichao <wanglichao@163.com> (http://0532.github.io/)",
 	"name": "wanglichao",
 	"description": "A module for learning perpose.",
 	"version": "0.0.1",
-	"homepage": "http://0532.github.com/",
+	"homepage": "http://0532.github.io/",
 	"repository": {
 	"url": ""
 	},
