@@ -223,7 +223,7 @@ public class InitRegisterWorkers implements ApplicationListener<ContextRefreshed
         WorkflowTaskCoordinator.Builder builder = new WorkflowTaskCoordinator.Builder();
         WorkflowTaskCoordinator coordinator = builder.withWorkers(workList).withThreadCount(threadCount)
           .withWorkerQueueSize(queueSize)
-          .withTaskClient(taskClient).build();
+           .withTaskClient(taskClient).build();
         System.out.println("conductor init .............");
         coordinator.init();
     }
@@ -261,13 +261,13 @@ public class InitRegisterWorkers implements ApplicationListener<ContextRefreshed
 
 - 5,5 conductor中保存数据是用的线程池队列，当并发数据量大的时候，队列会溢出，这里修改为使用的mq。（注意mq会有顺序的问题，要加版本号控制，否则会出现，流程执行完成，展示为完成。）
 
-#### 5、压测情况
+#### 6、压测情况
 
 - 单台120并发，单服务器800tps，正确率999，耗时70-120ms
 - 生产环境部署了生产环境12台4c8g虚机，最高可达24000tps
 
 
-下一章：Conductor使用中踩过的坑
+下一章：Conductor使用中踩过的坑II
 
 
 
