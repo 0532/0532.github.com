@@ -41,10 +41,13 @@ title: Netfinx-Conductor介绍I
 先放两张图，方便对conductor有一个全面的了解。
 
 Conductor整体架构图
+
 ![](/pic/2021/09-28-1.png)
 
 一个task执行过程图
+
 ![](/pic/2021/09-28-2.png)
+
 
 Conductor中关键字：
 
@@ -75,7 +78,7 @@ Conductor是前后端分离的，想要看到流程，还要部署一下ui服务
 
 - 第二步：定义TASK
   
-```json
+```java
 {
   "name": "encode_task",
   "retryCount": 3,
@@ -97,15 +100,14 @@ Conductor是前后端分离的，想要看到流程，还要部署一下ui服务
   "concurrentExecLimit": 100,
   "rateLimitFrequencyInSeconds": 60,
   "rateLimitPerFrequency": 50
-}```
-
+}
+```
 
 - 第三步：定义一个WORKFLOW
 
-
 workflow是支持版本控制的，创建时注意版本号的填写，创建workflow时遇到的最多问题是创建的workflow中包含未定义的task。
 
-```json
+```java
 {
   "name": "encode_and_deploy",
   "description": "Encodes a file and deploys to CDN",
@@ -137,7 +139,9 @@ workflow是支持版本控制的，创建时注意版本号的填写，创建wor
   "schemaVersion": 2
 }
 ```
+
 这时你可以在Conductor控台看到这样的页面：
+
 ![](/pic/2021/09-28-4.png)
 
 是这样的：
@@ -147,7 +151,8 @@ workflow是支持版本控制的，创建时注意版本号的填写，创建wor
 - 第四步：运行一个WORKFLOW
   
 `POST http://localhost:8080/api/workflow`
-```json
+
+```java
 {
   "name": "myWorkflow", // Name of the workflow
   "version": 1, // Version
@@ -171,7 +176,8 @@ workflow是支持版本控制的，创建时注意版本号的填写，创建wor
 - 5.1 国外的项目用Gradle比较多，Conductor也是用的Gradle，当时部署服务的第一件事就是把Gradle编译改成了Maven。后面Conductor好像也支持Maven了
 
 - 5.2 添加了conductor-springboot-starter的工具包，方便快速接入，该包主要功能是：a,添加一个@ConductorWorker的注解，使服务中的`TaskHandler`自动被扫描到。
-```
+
+```java
 <dependency>
       <groupId>com.jd.gyl.conductor</groupId>
       <artifactId>conductor-springboot-starte</artifactId>
@@ -252,7 +258,7 @@ public class InitRegisterWorkers implements ApplicationListener<ContextRefreshed
 
 - 5,5 conductor中保存数据是用的线程池队列，当并发数据量大的时候，队列会溢出，这里修改为使用的mq。（注意mq会有顺序的问题，要加版本号控制，否则会出现，流程执行完成，展示为完成。）
 
-**压测情况：**
+#### 5、压测情况
 
 - 单台120并发，单服务器800tps，正确率999，耗时70-120ms
 - 生产环境部署了生产环境12台4c8g虚机，最高可达24000tps
