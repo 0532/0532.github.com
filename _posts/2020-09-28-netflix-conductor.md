@@ -8,7 +8,7 @@ title: Netfinx-Conductor介绍I
 
 <p class="meta">28 Sep 2020 - 北京</p>
 
-** Conductor是一个微服务的编排引擎 **
+##### Conductor是一个微服务的编排引擎 
 
 #### 1、背景
 
@@ -68,7 +68,9 @@ TASK是Conductor的最小执行单元，WORKFLOW是串联各TASK形成的完整�
 
 - 第一步：选择合适的Conductor版本，然后部署这时你可以通过swaggerUI看到server提供的接口了，页面是这样的：
 ![](/pic/2021/09-28-3.png)
-- Conductor是前后端分离的，想要看到流程，还要部署一下ui服务，这样才是部署完成。
+
+Conductor是前后端分离的，想要看到流程，还要部署一下ui服务，这样才是部署完成。
+
 
 - 第二步：定义TASK
   
@@ -134,7 +136,9 @@ workflow是支持版本控制的，创建时注意版本号的填写，创建wor
 ```
 这时你可以在Conductor控台看到这样的页面：
 ![](/pic/2021/09-28-4.png)
+
 是这样的：
+
 ![](/pic/2021/09-28-5.png)
 
 - 第四步：运行一个WORKFLOW
