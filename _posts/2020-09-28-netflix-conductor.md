@@ -201,7 +201,8 @@ public class InitRegisterWorkers implements ApplicationListener<ContextRefreshed
 
     @Override
     public void onApplicationEvent(ContextRefreshedEvent event) {
-        Map<String, Object> map = event.getApplicationContext().getBeansWithAnnotation(ConductorWorker.class);
+        Map<String, Object> map = event.getApplicationContext()
+          .getBeansWithAnnotation(ConductorWorker.class);
         List<Worker> workList = new ArrayList<>();
         TaskClient taskClient = new TaskClient();
         //Point this to the server API
@@ -220,7 +221,9 @@ public class InitRegisterWorkers implements ApplicationListener<ContextRefreshed
             }
         }
         WorkflowTaskCoordinator.Builder builder = new WorkflowTaskCoordinator.Builder();
-        WorkflowTaskCoordinator coordinator = builder.withWorkers(workList).withThreadCount(threadCount).withWorkerQueueSize(queueSize).withTaskClient(taskClient).build();
+        WorkflowTaskCoordinator coordinator = builder.withWorkers(workList).withThreadCount(threadCount)
+          .withWorkerQueueSize(queueSize)
+          .withTaskClient(taskClient).build();
         System.out.println("conductor init .............");
         coordinator.init();
     }
