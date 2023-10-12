@@ -40,10 +40,10 @@ title: Netfinx-Conductor介绍I
 先放两张图，方便对conductor有一个全面的了解。
 
 Conductor整体架构图
-![](/pic/2021/09-28-1.jpg)
+![](/pic/2021/09-28-1.png)
 
 一个task执行过程图
-![](/pic/2021/09-28-2.jpg)
+![](/pic/2021/09-28-2.png)
 
 Conductor中关键字：
 
@@ -67,11 +67,11 @@ Conductor中关键字：
 TASK是Conductor的最小执行单元，WORKFLOW是串联各TASK形成的完整流程。
 
 - 第一步：选择合适的Conductor版本，然后部署这时你可以通过swaggerUI看到server提供的接口了，页面是这样的：
-![](/pic/2021/09-28-3.jpg)
+![](/pic/2021/09-28-3.png)
 - Conductor是前后端分离的，想要看到流程，还要部署一下ui服务，这样才是部署完成。
 
-- 第二步：定义TASK，
-**Example**
+- 第二步：定义TASK
+  
 ```json
 {
   "name": "encode_task",
@@ -98,7 +98,7 @@ TASK是Conductor的最小执行单元，WORKFLOW是串联各TASK形成的完整�
 
 - 第三步：定义一个WORKFLOW
 workflow是支持版本控制的，创建时注意版本号的填写，创建workflow时遇到的最多问题是创建的workflow中包含未定义的task。
-**Example**
+
 ```json
 {
   "name": "encode_and_deploy",
@@ -132,11 +132,12 @@ workflow是支持版本控制的，创建时注意版本号的填写，创建wor
 }
 ```
 这时你可以在Conductor控台看到这样的页面：
-![](/pic/2021/09-28-4.jpg)
+![](/pic/2021/09-28-4.png)
 是这样的：
-![](/pic/2021/09-28-5.jpg)
+![](/pic/2021/09-28-5.png)
 
 - 第四步：运行一个WORKFLOW
+  
 `POST http://localhost:8080/api/workflow`
 ```json
 {
