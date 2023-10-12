@@ -6,7 +6,7 @@ title: RocketMQ顺序消费的应用
 {{ page.title }}
 ================
 
-<p class="meta">11 JUN 2017 - 北京</p>
+<p class="meta">11 Jun 2017 - 北京</p>
 
 最近在项目中遇到rocketMQ的顺序问题，在此记录一下
 
@@ -120,7 +120,8 @@ rocketmq消息生产端示例代码如下：
  65:                 continueConsume = false;
  66:                 break;
  67:             case SUSPEND_CURRENT_QUEUE_A_MOMENT: // 计算是否暂时挂起（暂停）消费N毫秒，默认：10ms
- 68:                 this.getConsumerStatsManager().incConsumeFailedTPS(consumerGroup, consumeRequest.getMessageQueue().getTopic(), msgs.size());
+ 68:                 this.getConsumerStatsManager().incConsumeFailedTPS(consumerGroup, consumeRequest.getMessageQueue()
+.getTopic(), msgs.size());
  69:                 if (checkReconsumeTimes(msgs)) {
  70:                     // 设置消息重新消费
  71:                     consumeRequest.getProcessQueue().makeMessageToCosumeAgain(msgs);
