@@ -6,7 +6,7 @@ title: RocketMQ生产消费例子
 {{ page.title }}
 ================
 
-<p class="meta">01 JUL 2017 - 北京</p>
+<p class="meta">01 Jul 2017 - 北京</p>
 
 
 记录几个常用场景的示例：
