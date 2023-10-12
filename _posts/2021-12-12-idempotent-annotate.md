@@ -15,10 +15,9 @@ title: 幂等组件介绍及使用
 
 ### 2.使用方法
 
-I**，添加依赖**
+**I，添加依赖**
 
 ```text
-```aidl
 <dependency>
   <groupId>com.rongbei.saas</groupId>
   <artifactId>saas-idempotent-spring-boot-starter</artifactId>
@@ -26,12 +25,11 @@ I**，添加依赖**
 </dependency>
 ```
 
-```
 
-I**I，创建表**
+**II，创建表**
+
 
 ```text
-```aidl
 CREATE TABLE `trade_seq` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT '主键',
   `tenant_id` varchar(32) NOT NULL COMMENT '租户id',
@@ -47,7 +45,6 @@ CREATE TABLE `trade_seq` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `uniq_request` (`request_id`,`request_status`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COMMENT='交易流水';
-```
 ```
 
 **III，添加扫描**
