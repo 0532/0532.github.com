@@ -266,11 +266,9 @@ public class InitRegisterWorkers implements ApplicationListener<ContextRefreshed
 - 单台120并发，单服务器800tps，正确率999，耗时70-120ms
 - 生产环境部署了生产环境12台4c8g虚机，最高可达24000tps
 
+**官方文档中文介绍**[https://github.com/0532/conductor-document#readme]
 
 下一章：Conductor使用中踩过的坑II
-
-
-
 
 
 
