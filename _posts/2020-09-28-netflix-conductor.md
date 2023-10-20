@@ -232,27 +232,28 @@ public class InitRegisterWorkers implements ApplicationListener<ContextRefreshed
 ```
 
 - b 方便快速开发，添加一个`AbstractWorker`,用来规范每个任务的入参和出参格式`ConductorResult`，错误形式`ConductorException`。
+  
 ```
-    public TaskResult execute(Task task) {
+  public TaskResult execute(Task task) {
 
-        TaskResult result = new TaskResult(task);
-        ConductorResult res;
-        try {
-            log.info("开始进入节点 name:{},data:{}", getTaskDefName(), JSON.toJSONString(task.getInputData()));
-            String req = String.valueOf(task.getInputData().get("req"));
-            res = doProcess(req);
-        } catch (Exception e) {
-            log.error("流程节点错误:{}", getTaskDefName(), e);
-            result.setStatus(TaskResult.Status.FAILED);
-            result.getOutputData().put("resultMsg", e.getMessage());
-            return result;
-        }
-        result.setStatus(res.getResultStatus());
-        result.setCallbackAfterSeconds(res.getCallbackAfterSeconds());
-        result.getOutputData().put("resultData", JSON.toJSONString(res.getData()));
-        log.info("流程节点{}完成,data:{}", getTaskDefName(), JSON.toJSONString(res));
-        return result;
-    }
+      TaskResult result = new TaskResult(task);
+      ConductorResult res;
+      try {
+          log.info("开始进入节点 name:{},data:{}", getTaskDefName(), JSON.toJSONString(task.getInputData()));
+          String req = String.valueOf(task.getInputData().get("req"));
+          res = doProcess(req);
+      } catch (Exception e) {
+          log.error("流程节点错误:{}", getTaskDefName(), e);
+          result.setStatus(TaskResult.Status.FAILED);
+          result.getOutputData().put("resultMsg", e.getMessage());
+          return result;
+      }
+      result.setStatus(res.getResultStatus());
+      result.setCallbackAfterSeconds(res.getCallbackAfterSeconds());
+      result.getOutputData().put("resultData", JSON.toJSONString(res.getData()));
+      log.info("流程节点{}完成,data:{}", getTaskDefName(), JSON.toJSONString(res));
+      return result;
+  }
 ```
 
 - 5.3 conductor的存储组件都是可以插拔的，在配置文件中配置选择，我们当时为了速度，选择了redis + es的存储方式.由于是选择的redis+es的存储方式，还加一个删除`完成状态`的workflow的定时任务，用于删除过程数据，结果展示数据在es中，无需删除。
