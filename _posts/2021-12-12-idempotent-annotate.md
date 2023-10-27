@@ -61,7 +61,6 @@ mybatis配置文件中添加 `com.rongbei.saas.idempotent.repository.mapper` map
 
   注：2 用法只能控制分钟级别重复请求，无法控制全局幂等，需要全局幂等还需要入参指定
 
-git地址：https://github.com/0532?page=1&tab=repositories
 ```
 
 ### 3.优化空间
